@@ -1,5 +1,5 @@
 # Virtual Painter
-A desktop application to draw virtually on the screen using the index finger using mediapipe and OpenCv.
+A desktop application to draw virtually on the screen using the index finger using mediapipe and OpenCV libraries.
 
 ## Purpose
 The purpose of the project is to apply newly learnt computer vision techniques.
