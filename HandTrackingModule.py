@@ -31,11 +31,11 @@ class handDetector():
     def findPosition(self, frame, handNum=0, draw=True):
         self.LM_list = [] #landmark list
         if self.results.multi_hand_landmarks:
-            hand = self.results.multi_hand_landmarks[handNum]
+            hand = self.results.multi_hand_landmarks[handNum] #detecting the hand
 
-            for id, lm in enumerate(hand.landmark):
-                height, width, channel = frame.shape
-                cx, cy = int(lm.x * width), int(lm.y * height)
+            for id, lm in enumerate(hand.landmark): #each landmark has an id and x,y position from the "mulit_hand_landmark", we loop through each landmark
+                height, width, channel = frame.shape #our frame size
+                cx, cy = int(lm.x * width), int(lm.y * height) #calculating the x and y position of the landmarks in relation to the frame
                 self.LM_list.append([id,cx,cy])
                 if draw:
                     cv2.circle(frame, (cx,cy), 5, (255,0,255), cv2.FILLED)
